@@ -1,9 +1,8 @@
 //* Dependencias
 const express = require("express");
+const cors = require('cors');
 const swaggerUI = require("swagger-ui-express");
-const dotenv = require("dotenv");
 
-dotenv.config({ path: './.env' });
 
 //*Archivos de rutas
 const userRouter = require("./users/users.router").router;
@@ -21,6 +20,8 @@ const { db } = require("./utils/database");
 const app = express();
 
 initModels();
+const PORT = process.env.PORT || 8000
+app.use(cors());
 
 db.authenticate()
   .then(() => console.log("DataBase Authenticated"))
@@ -47,8 +48,8 @@ app.use("/api/v1/places", placesRouter);
 
 app.use("/api/v1/doc", swaggerUI.serve, swaggerUI.setup(swaggerDoc));
 
-app.listen(process.env.PORT, () => {
-  console.log("Server started !!!");
+app.listen(PORT, () => {
+  console.log(`Express app running on port: ${PORT}!!!!`);
 });
 
 module.exports = app
