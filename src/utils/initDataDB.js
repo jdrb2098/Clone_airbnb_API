@@ -7,60 +7,60 @@ const Reservations = require("../models/reservations.model");
 const generateData = async () => {
   await Roles.bulkCreate(
     [
-      { name: "guest", id: "a72b2aa3-6cf1-47f5-b614-52b5d0722284" },
-      { name: "host", id: "d34fadb5-49e6-4af9-adfa-006a8f68c9ba" },
-      { name: "admin", id: "02c6729f-eb9c-41b3-8f3f-7fc7b35c139a" },
+      { name: "guest", id: "fef3a08d-2cec-4728-9745-7cbd2b37e557" },
+      { name: "host", id: "97006fe0-4a35-47f4-bfbf-fc962e5fe500" },
+      { name: "admin", id: "5ee551ed-7bf4-44b0-aeb5-daaa824b9473" },
     ],
     { validate: true }
   );
 
   await Users.create({
-    id: "bac714f8-1766-4717-9226-b4817139797a",
-    name: "Juan David Rondon",
+    id: "3911e153-2d4a-4338-a4d6-a17fd38fea99",
+    name: "Juanito",
     gender: "Masculino",
     birthdayDate: "2016-06-23",
-    email: "Sample@sample.com",
+    email: "sample@academlo.com",
     password: "$2b$10$EXB34AWjYZkbb6WLhfEome074/c/JzhL0/mon/sffXmJDc4qkq1PW", //1234
     phone: "",
     dni: "1234567891",
-    roleId: "d34fadb5-49e6-4af9-adfa-006a8f68c9ba",
+    roleId: "97006fe0-4a35-47f4-bfbf-fc962e5fe500",
     profileImg: "",
     status: "active",
     verified: false,
   });
 
   await Users.create({
-    id: "c001b753-377c-4556-9a5d-3653f01674ae",
-    name: "LoremIpsum",
+    id: "4093ab84-6ae6-4e20-809c-ecdec8e06267",
+    name: "Fabian Moyano",
     gender: "Masculino",
     birthdayDate: "2016-06-23",
     email: "fabian@academlo.com",
     password: "$2b$10$EXB34AWjYZkbb6WLhfEome074/c/JzhL0/mon/sffXmJDc4qkq1PW", //1234
     phone: "",
     dni: "1234567891",
-    roleId: "a72b2aa3-6cf1-47f5-b614-52b5d0722284",
+    roleId: "fef3a08d-2cec-4728-9745-7cbd2b37e557",
     profileImg: "",
     status: "active",
     verified: false,
   });
 
   await Users.create({
-    id: "ba88b384-a203-4e5f-a096-38d5e305b8e9",
-    name: "loremipsum",
+    id: "9fbc82bd-42ae-4b9b-b926-7212ac31227a",
+    name: "Pacheco Moyano",
     gender: "Masculino",
     birthdayDate: "2016-06-23",
     email: "pacheco@academlo.com",
     password: "$2b$10$EXB34AWjYZkbb6WLhfEome074/c/JzhL0/mon/sffXmJDc4qkq1PW", //1234
     phone: "",
     dni: "1234567891",
-    roleId: "a72b2aa3-6cf1-47f5-b614-52b5d0722284",
+    roleId: "fef3a08d-2cec-4728-9745-7cbd2b37e557",
     profileImg: "",
     status: "active",
     verified: false,
   });
 
   await Users.create({
-    id: "af29450c-8e84-4bb5-a554-e2ae7b14050a",
+    id: "74cd6011-7e76-4d6d-b25b-1d6e4182ec2f",
     name: "Sahid Kick",
     gender: "male",
     email: "sahid@academlo.com",
@@ -69,7 +69,7 @@ const generateData = async () => {
     birthdayDate: "2000-10-22",
     dni: "",
     address: "",
-    roleId: "02c6729f-eb9c-41b3-8f3f-7fc7b35c139a",
+    roleId: "5ee551ed-7bf4-44b0-aeb5-daaa824b9473",
     profileImage: "asd.com",
     status: "active",
     verified: false,
@@ -84,7 +84,7 @@ const generateData = async () => {
       continent: "America",
     },
     {
-      id: "78b8358a-4783-428e-906d-214f7e7b2031",
+      id: "9c0412b6-7d56-4347-8fbe-5455e8a42438",
       city: "Zapopan",
       state: "Jalisco",
       country: "México",
@@ -130,13 +130,13 @@ const generateData = async () => {
     bathrooms: 4.5,
     price: 1536.0,
     hostId: "74cd6011-7e76-4d6d-b25b-1d6e4182ec2f",
-    placeId: "78b8358a-4783-428e-906d-214f7e7b2031",
+    placeId: "9c0412b6-7d56-4347-8fbe-5455e8a42438",
     commision: 150.0,
   });
 
   await Accommodations.create({
     id: "35a42549-262e-4ad0-b6a9-82f281211992",
-    title: "Esta la creo junior",
+    title: "lorem ipsjum",
     description: "asdf",
     guests: 6,
     rooms: 3,
@@ -144,7 +144,7 @@ const generateData = async () => {
     bathrooms: 4.5,
     price: 1536.0,
     hostId: "3911e153-2d4a-4338-a4d6-a17fd38fea99",
-    placeId: "78b8358a-4783-428e-906d-214f7e7b2031",
+    placeId: "9c0412b6-7d56-4347-8fbe-5455e8a42438",
     commision: 150.0,
   });
 
@@ -158,7 +158,7 @@ const generateData = async () => {
   });
 
   await Reservations.create({
-    id: "b158d285-af20-4200-8b07-464d1522793a",
+    id: "59651d5f-b174-4d80-a6e5-fe22458ff112",
     userId: "4093ab84-6ae6-4e20-809c-ecdec8e06267",
     arrival: "2022-09-12 09:08:13.756 -0500",
     departure: "2022-10-12 09:08:13.756 -0500",

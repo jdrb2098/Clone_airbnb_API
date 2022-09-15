@@ -2,7 +2,6 @@
 const express = require("express");
 const swaggerUI = require("swagger-ui-express");
 
-
 //*Archivos de rutas
 const userRouter = require("./users/users.router").router;
 const authRouter = require("./auth/auth.router").router;
@@ -18,9 +17,9 @@ const swaggerDoc = require("./swagger.json")
 const { db } = require("./utils/database");
 const app = express();
 
-initModels();
-const PORT = process.env.PORT || 8000
+const PORT = process.env.PORT || 8000;
 
+initModels();
 
 db.authenticate()
   .then(() => console.log("DataBase Authenticated"))
@@ -35,8 +34,6 @@ db.sync({ force: true })
 //? Esta configuracion es para habilitar el req.body
 app.use(express.json());
 
-
-
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/accommodations", accommodationsRouter);
@@ -46,7 +43,7 @@ app.use("/api/v1/places", placesRouter);
 app.use("/api/v1/doc", swaggerUI.serve, swaggerUI.setup(swaggerDoc));
 
 app.listen(PORT, () => {
-  console.log(`Express app running on port: ${PORT}!!!!`);
+  console.log("Server started !!!");
 });
 
 module.exports = app
