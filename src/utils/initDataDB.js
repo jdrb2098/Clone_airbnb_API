@@ -7,15 +7,15 @@ const Reservations = require("../models/reservations.model");
 const generateData = async () => {
   await Roles.bulkCreate(
     [
-      { name: "guest", id: "fef3a08d-2cec-4728-9745-7cbd2b37e557" },
-      { name: "host", id: "97006fe0-4a35-47f4-bfbf-fc962e5fe500" },
-      { name: "admin", id: "5ee551ed-7bf4-44b0-aeb5-daaa824b9473" },
+      { name: "guest", id: "e511d426-70f8-40de-a247-b754356a26bf" },
+      { name: "host", id: "844879a2-eac6-4973-b115-1e9184ac1921" },
+      { name: "admin", id: "e3966352-c77c-4483-b30e-9bf2acff7762" },
     ],
     { validate: true }
   );
 
   await Users.create({
-    id: "3911e153-2d4a-4338-a4d6-a17fd38fea99",
+    id: "6c43ac7a-9ffe-461b-9a4f-55cacbc1fc63",
     name: "Juanito",
     gender: "Masculino",
     birthdayDate: "2016-06-23",
@@ -23,29 +23,29 @@ const generateData = async () => {
     password: "$2b$10$EXB34AWjYZkbb6WLhfEome074/c/JzhL0/mon/sffXmJDc4qkq1PW", //1234
     phone: "",
     dni: "1234567891",
-    roleId: "97006fe0-4a35-47f4-bfbf-fc962e5fe500",
+    roleId: "844879a2-eac6-4973-b115-1e9184ac1921",
     profileImg: "",
     status: "active",
     verified: false,
   });
 
   await Users.create({
-    id: "4093ab84-6ae6-4e20-809c-ecdec8e06267",
-    name: "Fabian Moyano",
+    id: "0a2b3005-2714-4508-bf94-491914428c88",
+    name: "Sample Name",
     gender: "Masculino",
     birthdayDate: "2016-06-23",
-    email: "fabian@academlo.com",
+    email: "sampleEmail@academlo.com",
     password: "$2b$10$EXB34AWjYZkbb6WLhfEome074/c/JzhL0/mon/sffXmJDc4qkq1PW", //1234
     phone: "",
     dni: "1234567891",
-    roleId: "fef3a08d-2cec-4728-9745-7cbd2b37e557",
+    roleId: "e511d426-70f8-40de-a247-b754356a26bf",
     profileImg: "",
     status: "active",
     verified: false,
   });
 
   await Users.create({
-    id: "9fbc82bd-42ae-4b9b-b926-7212ac31227a",
+    id: "d682f333-2fef-4c23-bf12-151ded1b1b6c",
     name: "Pacheco Moyano",
     gender: "Masculino",
     birthdayDate: "2016-06-23",
@@ -53,7 +53,7 @@ const generateData = async () => {
     password: "$2b$10$EXB34AWjYZkbb6WLhfEome074/c/JzhL0/mon/sffXmJDc4qkq1PW", //1234
     phone: "",
     dni: "1234567891",
-    roleId: "fef3a08d-2cec-4728-9745-7cbd2b37e557",
+    roleId: "e511d426-70f8-40de-a247-b754356a26bf",
     profileImg: "",
     status: "active",
     verified: false,
@@ -69,7 +69,7 @@ const generateData = async () => {
     birthdayDate: "2000-10-22",
     dni: "",
     address: "",
-    roleId: "5ee551ed-7bf4-44b0-aeb5-daaa824b9473",
+    roleId: "e3966352-c77c-4483-b30e-9bf2acff7762",
     profileImage: "asd.com",
     status: "active",
     verified: false,
@@ -77,14 +77,14 @@ const generateData = async () => {
 
   await Places.bulkCreate([
     {
-      id: "864ee3c2-facd-4a23-8b4a-4e9d342d9036",
+      id: "1ab9f5d9-7cbf-4b09-a819-a136859e457b",
       city: "Guadalajara",
       state: "Jalisco",
       country: "México",
       continent: "America",
     },
     {
-      id: "9c0412b6-7d56-4347-8fbe-5455e8a42438",
+      id: "765f4fec-5189-48a0-b597-99a003cd6d75",
       city: "Zapopan",
       state: "Jalisco",
       country: "México",
@@ -130,7 +130,7 @@ const generateData = async () => {
     bathrooms: 4.5,
     price: 1536.0,
     hostId: "74cd6011-7e76-4d6d-b25b-1d6e4182ec2f",
-    placeId: "9c0412b6-7d56-4347-8fbe-5455e8a42438",
+    placeId: "765f4fec-5189-48a0-b597-99a003cd6d75",
     commision: 150.0,
   });
 
@@ -143,14 +143,14 @@ const generateData = async () => {
     beds: 3,
     bathrooms: 4.5,
     price: 1536.0,
-    hostId: "3911e153-2d4a-4338-a4d6-a17fd38fea99",
-    placeId: "9c0412b6-7d56-4347-8fbe-5455e8a42438",
+    hostId: "6c43ac7a-9ffe-461b-9a4f-55cacbc1fc63",
+    placeId: "765f4fec-5189-48a0-b597-99a003cd6d75",
     commision: 150.0,
   });
 
   await Reservations.create({
-    id: "7383c6f8-7bc2-4058-b099-c3aff3d6f6e4",
-    userId: "3911e153-2d4a-4338-a4d6-a17fd38fea99",
+    id: "36da0ab3-3f31-473c-a42f-b88b9a83226a",
+    userId: "6c43ac7a-9ffe-461b-9a4f-55cacbc1fc63",
     arrival: "2022-09-12 09:08:13.756 -0500",
     departure: "2022-10-12 09:08:13.756 -0500",
     accommodationId: "7e5fc196-8f45-46d2-bb2b-2f8b95340d50",
@@ -159,7 +159,7 @@ const generateData = async () => {
 
   await Reservations.create({
     id: "59651d5f-b174-4d80-a6e5-fe22458ff112",
-    userId: "4093ab84-6ae6-4e20-809c-ecdec8e06267",
+    userId: "0a2b3005-2714-4508-bf94-491914428c88",
     arrival: "2022-09-12 09:08:13.756 -0500",
     departure: "2022-10-12 09:08:13.756 -0500",
     accommodationId: "7e5fc196-8f45-46d2-bb2b-2f8b95340d50",
