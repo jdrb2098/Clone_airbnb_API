@@ -1,6 +1,5 @@
 //* Dependencias
 const express = require("express");
-const cors = require('cors');
 const swaggerUI = require("swagger-ui-express");
 
 
@@ -21,7 +20,7 @@ const app = express();
 
 initModels();
 const PORT = process.env.PORT || 8000
-app.use(cors());
+
 
 db.authenticate()
   .then(() => console.log("DataBase Authenticated"))
